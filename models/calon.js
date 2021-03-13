@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     {
       nama: DataTypes.STRING,
       alamat: DataTypes.STRING,
-      no_hp: DataTypes.STRING,
+      noHp: DataTypes.STRING,
       materi: DataTypes.FLOAT,
       pemrograman: DataTypes.FLOAT,
-      tanggung_jawab: DataTypes.FLOAT,
+      tanggungJawab: DataTypes.FLOAT,
       jaringan: DataTypes.FLOAT,
       metode: DataTypes.FLOAT,
       sistem: DataTypes.FLOAT,
@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       presentrasi: DataTypes.FLOAT,
       nilai: DataTypes.FLOAT,
       rank: DataTypes.STRING,
+      status: DataTypes.BOOLEAN,
     },
     {
       sequelize,

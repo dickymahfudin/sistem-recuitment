@@ -14,7 +14,7 @@ $(document).ready(function () {
       id = me.attr("id"),
       nama = me.attr("nama"),
       alamat = me.attr("alamat"),
-      no_hp = me.attr("no_hp");
+      noHp = me.attr("noHp");
 
     toggleModal();
     const text = id == "add" ? "Save" : "Update";
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $("#nama").val(nama);
     $("#alamat").val(alamat);
-    $("#no_hp").val(no_hp);
+    $("#noHp").val(noHp);
     $(".modal-title").text(titleModal);
     $("#modal-btn-save").text(text);
     $("#formCalon").attr("action", action);
@@ -59,56 +59,5 @@ $(document).ready(function () {
     modal.classList.toggle("opacity-0");
     modal.classList.toggle("pointer-events-none");
     body.classList.toggle("modal-active");
-  }
-
-  function addEdit({
-    nama,
-    alamat,
-    no_hp,
-    materi,
-    pemrograman,
-    tanggung_jawab,
-    jaringan,
-    metode,
-    sistem,
-    alat,
-    web,
-    bInggris,
-    berinteraksi,
-    mengajar,
-    presentrasi,
-    nilai,
-    rank,
-    type,
-  }) {
-    const method = type == "add" ? "post" : "put";
-    const data = {
-      nama,
-      alamat,
-      no_hp,
-      materi,
-      pemrograman,
-      tanggung_jawab,
-      jaringan,
-      metode,
-      sistem,
-      alat,
-      web,
-      bInggris,
-      berinteraksi,
-      mengajar,
-      presentrasi,
-      nilai,
-      rank,
-    };
-
-    $.ajax({
-      type: method,
-      url: "/calon",
-      data,
-      success: function (response) {
-        console.log(response);
-      },
-    });
   }
 });

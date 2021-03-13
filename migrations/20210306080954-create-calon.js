@@ -14,7 +14,7 @@ module.exports = {
       alamat: {
         type: Sequelize.STRING,
       },
-      no_hp: {
+      noHp: {
         type: Sequelize.STRING,
       },
       materi: {
@@ -23,7 +23,7 @@ module.exports = {
       pemrograman: {
         type: Sequelize.FLOAT,
       },
-      tanggung_jawab: {
+      tanggungJawab: {
         type: Sequelize.FLOAT,
       },
       jaringan: {
@@ -58,6 +58,11 @@ module.exports = {
       },
       rank: {
         type: Sequelize.STRING,
+      },
+      status: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,

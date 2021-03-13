@@ -1,7 +1,7 @@
 <!--Card-->
 <div
   id="recipients"
-  class="p-8 mt-8 lg:mt-0 rounded shadow bg-gray-900 border border-gray-800"
+  class="p-8 mt-8 lg:mt-0 rounded shadow bg-gray-900 border border-gray-800 rounded-xl p-8"
 >
   <div>
     <button
@@ -33,13 +33,13 @@
         <td><%= i+1 %></td>
         <td><%= data.nama %></td>
         <td><%= data.alamat %></td>
-        <td><%= data.no_hp %></td>
+        <td><%= data.noHp %></td>
         <td>
           <button
             id="<%= data.id%>"
             nama="<%= data.nama %>"
             alamat="<%= data.alamat %>"
-            no_hp="<%= data.no_hp %>"
+            noHp="<%= data.noHp %>"
             class="modal-open bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded mb-2"
           >
             <i class="fas fa-edit"></i>

@@ -13,6 +13,8 @@ const usersRouter = require("./routes/users");
 const loginRouter = require("./routes/login");
 const calonRouter = require("./routes/calon");
 const dashboardRouter = require("./routes/dashboard");
+const penilaianRouter = require("./routes/penilaian");
+const midleware = require("./helpers/midleware");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
@@ -40,15 +42,16 @@ app.use(
 );
 app.use(flash());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+// app.use("/users", midleware, usersRouter);
 app.use("/login", loginRouter);
-app.use("/calon", calonRouter);
-app.use("/dashboard", dashboardRouter);
+app.use("/calon", midleware, calonRouter);
+app.use("/dashboard", midleware, dashboardRouter);
+app.use("/penilaian", midleware, penilaianRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => next(createError(404)));
+// app.use((req, res, next) => next(createError(404)));
 
+app.get("*", midleware, (req, res) => res.redirect("/dashboard"));
 // error handler
 app.use((err, req, res, next) => {
   res.locals.message = err.message;

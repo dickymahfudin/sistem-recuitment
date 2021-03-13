@@ -19,10 +19,10 @@ router.get("/:id", async (req, res, next) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const { nama, alamat, no_hp } = req.body;
+  const { nama, alamat, noHp } = req.body;
   console.log(nama);
   await calon
-    .create({ nama, alamat, no_hp })
+    .create({ nama, alamat, noHp })
     .then((result) => {
       req.flash("success", "Data Berhasil Ditambahkan");
       res.redirect("/calon");
@@ -39,7 +39,7 @@ router.post("/:id", async (req, res, next) => {
   const {
     nama,
     alamat,
-    no_hp,
+    nohp,
     materi,
     pemrograman,
     tanggung_jawab,
@@ -59,7 +59,7 @@ router.post("/:id", async (req, res, next) => {
   const data = {
     nama,
     alamat,
-    no_hp,
+    nohp,
     materi,
     pemrograman,
     tanggung_jawab,
