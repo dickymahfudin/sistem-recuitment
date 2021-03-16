@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.use(
   session({
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 6000000 },
     store: new session.MemoryStore(),
     saveUninitialized: true,
     resave: "true",
