@@ -130,118 +130,102 @@
 
   <% if(calons.length) { %>
     <!--Card-->
-<div
-id="recipients"
-class="p-8 mt-8 lg:mt-0 rounded shadow bg-gray-900 border border-gray-800 rounded-xl p-8"
->
+    <div id="recipients" class="p-8 mt-8 lg:mt-0 rounded shadow bg-gray-900 border border-gray-800 rounded-xl p-8">
+      <table id="table" class="stripe hover" style="width: 100%; padding-top: 1em; padding-bottom: 1em">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>No Telepon</th>
+            <th>Nilai</th>
+            <th>RANK</th>
+            <th>Jenjang pendidikan</th>
+            <th>IPK</th>
+            <th>Pengalaman Mengajar</th>
+            <th>Publikasi Dalam Karya Ilmiah</th>
+            <th>Kecakapan Dalam Memberikan Materi Perkuliahan</th>
+            <th>Memiliki Sertifikat Keahlian</th>
+            <th>Nilai Test Psikologi</th>
+            <th>Nilai Dari Seleksi Kompetensi</th>
+            <th>Nilai Dari Test Kesehatan</th>
+            <th>Kemampuan Berinteraksi</th>
 
-<table
-  id="table"
-  class="stripe hover"
-  style="width: 100%; padding-top: 1em; padding-bottom: 1em"
->
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama</th>
-      <th>Alamat</th>
-      <th>No Telepon</th>
-      <th>Nilai</th>
-      <th>RANK</th>
-      <th>Penyampaian Materi</th>
-      <th>Pemahaman Bahasa Pemrograman</th>
-      <th>Rasa Tanggung Jawab</th>
-      <th>Mengerti Tentang Jaringan</th>
-      <th>Pemahaman Tentang Metode</th>
-      <th>Pemahaman Tentang Sistem</th>
-      <th>Pemahaman Tentang Alat</th>
-      <th>Pemahaman Tentang Web</th>
-      <th>Pemahaman Bahasa Inggris</th>
-      <th>Kemampuan Berinteraksi</th>
-      <th>Pengalaman Mengajar</th>
-      <th>Kemampuan Berinteraksi</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% for(let i=0; i < calons.length ; i++) { const data = calons[i]%>
-    <tr>
-      <td><%= i+1 %></td>
-      <td><%= data.nama %></td>
-      <td><%= data.alamat %></td>
-      <td><%= data.noHp %></td>
-      <td><%= data.nilai %></td>
-      <td><%= data.rank %></td>
-      <td><%= data.materi %></td>
-      <td><%= data.pemrograman %></td>
-      <td><%= data.tanggungJawab %></td>
-      <td><%= data.jaringan %></td>
-      <td><%= data.metode %></td>
-      <td><%= data.sistem %></td>
-      <td><%= data.alat %></td>
-      <td><%= data.web %></td>
-      <td><%= data.bInggris %></td>
-      <td><%= data.berinteraksi %></td>
-      <td><%= data.mengajar %></td>
-      <td><%= data.presentrasi %></td>
-      <td><%= data.status%></td>
-      </td>
-    </tr>
-    <%}%>
-  </tbody>
-</table>
-<% } %>
-</div>
-<!--/Card-->
-
-
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i=0; i < calons.length ; i++) { const data = calons[i]%>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= data.nama %></td>
+            <td><%= data.alamat %></td>
+            <td><%= data.noHp %></td>
+            <td><%= data.nilai %></td>
+            <td><%= data.rank %></td>
+            <td><%= data.pendidikan %></td>
+            <td><%= data.ipk %></td>
+            <td><%= data.mengajar %></td>
+            <td><%= data.karyaIlmiah %></td>
+            <td><%= data.keahlian %></td>
+            <td><%= data.sertifikat %></td>
+            <td><%= data.psikologi %></td>
+            <td><%= data.kompetensi %></td>
+            <td><%= data.kesehatan %></td>
+            <td><%= data.berinteraksi %></td>
+            <td><%= data.status %></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
   </div>
-
 </div>
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     $("#table")
-    .DataTable({
-      rowReorder: {
-                selector: "td:nth-child(2)"
+      .DataTable({
+        rowReorder: {
+          selector: "td:nth-child(2)"
+        },
+        responsive: true,
+        procesing: true,
+        // serverSide: true,
+        retrieve: true,
+        dom: "Bfrtip",
+        lengthChange: false,
+        lengthMenu: [
+          [10, 25, 50, -1],
+          ["10 rows", "25 rows", "50 rows", "Show all"]
+        ],
+        buttons: {
+          dom: {
+            button: {
+              tag: "button",
+              className: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+            }
+          },
+          buttons: [
+            {
+              extend: "pageLength",
+              className: "mr-2",
+              titleAttr: "Sort"
             },
-            responsive: true,
-            procesing: true,
-            // serverSide: true,
-            retrieve: true,
-            dom: "Bfrtip",
-            lengthChange: false,
-            lengthMenu: [
-                [10, 25, 50, -1],
-                ["10 rows", "25 rows", "50 rows", "Show all"]
-            ],
-            buttons: {
-                dom: {
-                    button: {
-                        tag: "button",
-                        className: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                    }
-                },
-                buttons: [
-                    {
-                        extend: "pageLength",
-                        className: "mr-2",
-                        titleAttr: "Sort"
-                    },
-                    {
-                        extend: "excel",
-                        className: "btn btn-sm btn-success mr-2",
-                        titleAttr: "Excel export.",
-                        text: "Export Excel",
-                        filename: "excel-export",
-                        extension: ".xlsx"
-                    },
-                ]
+            {
+              extend: "excel",
+              className: "btn btn-sm btn-success mr-2",
+              titleAttr: "Excel export.",
+              text: "Export Excel",
+              filename: "excel-export",
+              extension: ".xlsx"
             },
-    })
-    .columns.adjust()
-    .responsive.recalc();
-  } )
-  ;
+          ]
+        },
+      })
+      .columns.adjust()
+      .responsive.recalc();
+  })
+    ;
 
 </script>

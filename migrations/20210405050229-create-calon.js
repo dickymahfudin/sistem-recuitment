@@ -17,40 +17,34 @@ module.exports = {
       noHp: {
         type: Sequelize.STRING,
       },
-      materi: {
-        type: Sequelize.FLOAT,
+      pendidikan: {
+        type: Sequelize.STRING,
       },
-      pemrograman: {
-        type: Sequelize.FLOAT,
-      },
-      tanggungJawab: {
-        type: Sequelize.FLOAT,
-      },
-      jaringan: {
-        type: Sequelize.FLOAT,
-      },
-      metode: {
-        type: Sequelize.FLOAT,
-      },
-      sistem: {
-        type: Sequelize.FLOAT,
-      },
-      alat: {
-        type: Sequelize.FLOAT,
-      },
-      web: {
-        type: Sequelize.FLOAT,
-      },
-      bInggris: {
-        type: Sequelize.FLOAT,
-      },
-      berinteraksi: {
+      ipk: {
         type: Sequelize.FLOAT,
       },
       mengajar: {
         type: Sequelize.FLOAT,
       },
-      presentrasi: {
+      karyaIlmiah: {
+        type: Sequelize.FLOAT,
+      },
+      keahlian: {
+        type: Sequelize.FLOAT,
+      },
+      sertifikat: {
+        type: Sequelize.FLOAT,
+      },
+      psikologi: {
+        type: Sequelize.FLOAT,
+      },
+      kompetensi: {
+        type: Sequelize.FLOAT,
+      },
+      kesehatan: {
+        type: Sequelize.FLOAT,
+      },
+      berinteraksi: {
         type: Sequelize.FLOAT,
       },
       nilai: {
@@ -60,8 +54,8 @@ module.exports = {
         type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.BOOLEAN,
         allowNull: false,
+        type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
       createdAt: {

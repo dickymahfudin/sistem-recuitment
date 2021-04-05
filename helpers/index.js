@@ -23,39 +23,36 @@ const kurang = (x) => {
   if (a <= x && x <= b) return (b - x) / (b - a);
 };
 
+const ipks = (x) => {
+  if (x <= 3) return 1;
+  if (x >= 4) return 0;
+  if (3 <= x && x <= 4) return (4 - x) / (4 - 3);
+};
+
 //implikasi fuzzy
 const impikasiFuzzy = (data) => {
+  const pendidikan = data.pendidikan == "S2" ? 6 : 8;
   const r1 = Math.min(
     ...[
-      baik(data.materi),
-      baik(data.pemrograman),
-      baik(data.tanggungJawab),
-      sedang(data.jaringan),
+      baik(pendidikan),
+      baik(data.karyaIlmiah),
+      baik(data.keahlian),
+      ipks(data.ipk),
       baik(data.berinteraksi),
       baik(data.mengajar),
     ]
   );
   const r2 = Math.min(
-    ...[
-      sedang(data.materi),
-      baik(data.sistem),
-      baik(data.web),
-      sedang(data.jaringan),
-      baik(data.berinteraksi),
-      baik(data.mengajar),
-    ]
+    ...[sedang(pendidikan), baik(data.psikologi), baik(data.mengajar)]
   );
   const r3 = Math.min(
-    ...[sedang(data.metode), kurang(data.sistem), baik(data.presentrasi)]
+    ...[sedang(data.kesehatan), kurang(data.psikologi), baik(data.kompetensi)]
   );
-  const r4 = Math.min(
-    ...[kurang(data.berinteraksi), sedang(data.bInggris), sedang(data.alat)]
-  );
+  const r4 = Math.min(...[kurang(data.berinteraksi), sedang(data.sertifikat)]);
   const r5 = Math.min(
     ...[
-      kurang(data.presentrasi),
+      kurang(data.kompetensi),
       kurang(data.mengajar),
-      kurang(data.metode),
       kurang(data.berinteraksi),
     ]
   );

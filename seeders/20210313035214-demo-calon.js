@@ -15,32 +15,28 @@ module.exports = {
       const noHp = faker.phone.phoneNumberFormat();
       const nama = `${prefix} ${firstName} ${lastName} ${suffix}`;
       const alamat = `${streetAddress} ${streetName}`;
-      const materi = faker.random.float({ min: 0, max: 10 }),
-        pemrograman = faker.random.float({ min: 0, max: 10 }),
-        tanggungJawab = faker.random.float({ min: 0, max: 10 }),
-        jaringan = faker.random.float({ min: 0, max: 10 }),
-        sistem = faker.random.float({ min: 0, max: 10 }),
-        metode = faker.random.float({ min: 0, max: 10 }),
-        alat = faker.random.float({ min: 0, max: 10 }),
-        web = faker.random.float({ min: 0, max: 10 }),
-        bInggris = faker.random.float({ min: 0, max: 10 }),
-        berinteraksi = faker.random.float({ min: 0, max: 10 }),
-        mengajar = faker.random.float({ min: 0, max: 10 }),
-        presentrasi = faker.random.float({ min: 0, max: 10 });
+      const pendidikan = faker.random.boolean() ? "S2" : "S3",
+        ipk = faker.random.float({ min: 3, max: 4 }),
+        mengajar = faker.random.float({ min: 3, max: 10 }),
+        karyaIlmiah = faker.random.float({ min: 3, max: 10 }),
+        keahlian = faker.random.float({ min: 3, max: 10 }),
+        sertifikat = faker.random.float({ min: 3, max: 10 }),
+        psikologi = faker.random.float({ min: 3, max: 10 }),
+        kompetensi = faker.random.float({ min: 3, max: 10 }),
+        kesehatan = faker.random.float({ min: 3, max: 10 }),
+        berinteraksi = faker.random.float({ min: 3, max: 10 });
 
       const data = {
-        materi,
-        pemrograman,
-        tanggungJawab,
-        jaringan,
-        metode,
-        sistem,
-        alat,
-        web,
-        bInggris,
-        berinteraksi,
+        pendidikan,
+        ipk,
         mengajar,
-        presentrasi,
+        karyaIlmiah,
+        keahlian,
+        sertifikat,
+        psikologi,
+        kompetensi,
+        kesehatan,
+        berinteraksi,
       };
       const defuzi = impikasiFuzzy(data);
       const defuzifikasi = defuzi.defuzifikasi ? defuzi.defuzifikasi : 0;

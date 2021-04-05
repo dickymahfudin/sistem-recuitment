@@ -5,18 +5,20 @@ const impikasiFuzzy = require("../helpers");
 
 router.get("/", async (req, res, next) => {
   const forms = [
-    { name: "materi", placeholder: "Penyampaian Materi" },
-    { name: "pemrograman", placeholder: "Menguasai Bahasa Pemrograman" },
-    { name: "tanggungJawab", placeholder: "Rasa Tanggung Jawab" },
-    { name: "jaringan", placeholder: "Pemahaman Tentang Jaringan" },
-    { name: "metode", placeholder: "Pemahaman Tentang Metode" },
-    { name: "sistem", placeholder: "Pemahaman Tentang Sistem" },
-    { name: "alat", placeholder: "Pemahaman Tentang Alat" },
-    { name: "web", placeholder: "Pemahaman Tentang Web" },
-    { name: "bInggris", placeholder: "Pemahaman Bahasa Inggris" },
-    { name: "berinteraksi", placeholder: "Kemampuan Berinteraksi" },
     { name: "mengajar", placeholder: "Pengalaman Mengajar" },
-    { name: "presentrasi", placeholder: "Kemampuan Berpresentasi" },
+    {
+      name: "karyaIlmiah",
+      placeholder: "Memiliki Publikasi Dalam Karya Ilmiah",
+    },
+    {
+      name: "keahlian",
+      placeholder: "Kecakapan Dalam Memberikan Materi Perkuliahan",
+    },
+    { name: "sertifikat", placeholder: "Memiliki Sertifikat Keahlian" },
+    { name: "psikologi", placeholder: "Nilai Test Psikologi" },
+    { name: "kompetensi", placeholder: "Nilai Dari Seleksi Kompetensi" },
+    { name: "kesehatan", placeholder: "Nilai Dari Test Kesehatan" },
+    { name: "berinteraksi", placeholder: "Kemampuan Berinteraksi" },
   ];
   const datas = await calon.findAll({
     where: { status: false },
@@ -28,32 +30,28 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   const {
     id,
-    materi,
-    pemrograman,
-    tanggungJawab,
-    jaringan,
-    metode,
-    sistem,
-    alat,
-    web,
-    bInggris,
-    berinteraksi,
+    pendidikan,
+    ipk,
     mengajar,
-    presentrasi,
+    karyaIlmiah,
+    keahlian,
+    sertifikat,
+    psikologi,
+    kompetensi,
+    kesehatan,
+    berinteraksi,
   } = req.body;
   const data = {
-    materi,
-    pemrograman,
-    tanggungJawab,
-    jaringan,
-    metode,
-    sistem,
-    alat,
-    web,
-    bInggris,
-    berinteraksi,
+    pendidikan,
+    ipk,
     mengajar,
-    presentrasi,
+    karyaIlmiah,
+    keahlian,
+    sertifikat,
+    psikologi,
+    kompetensi,
+    kesehatan,
+    berinteraksi,
   };
   const defuzi = impikasiFuzzy(data);
   const dataCalon = await calon.findByPk(id);
