@@ -53,6 +53,7 @@ router.post("/", async (req, res, next) => {
     kesehatan,
     berinteraksi,
   };
+  console.log(data);
   const defuzi = impikasiFuzzy(data);
   const dataCalon = await calon.findByPk(id);
   await dataCalon.update({

@@ -82,4 +82,11 @@ router.post("/:id", async (req, res, next) => {
   // });
 });
 
+router.get("/delete/:id", async (req, res, next) => {
+  const { id } = req.params;
+  const findCalon = await calon.findByPk(id);
+  await findCalon.destroy();
+  req.flash("success", "Data Berhasil Dihapus");
+  res.redirect("/calon");
+});
 module.exports = router;

@@ -40,11 +40,13 @@
             nama="<%= data.nama %>"
             alamat="<%= data.alamat %>"
             noHp="<%= data.noHp %>"
-            class="modal-open bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded mb-2"
+            class="modal-open"
+            title="Edit <%= data.nama %>"
           >
-            <i class="fas fa-edit"></i>
-            Edit Data
-          </button>
+            <i class="fas fa-edit text-blue-700 font-bold py-2 px-2 rounded mb-2"></i>
+          </button> |
+          <a href="/calon/delete/<%= data.id%>" onclick="return confirm('Anda yakin ingin menghapus item ini?');"
+            title="Delete <%= data.nama %>" ><i class="fas fa-trash text-danger"></i></a>
         </td>
       </tr>
       <%}%>
