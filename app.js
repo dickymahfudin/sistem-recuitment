@@ -14,6 +14,7 @@ const loginRouter = require("./routes/login");
 const calonRouter = require("./routes/calon");
 const dashboardRouter = require("./routes/dashboard");
 const penilaianRouter = require("./routes/penilaian");
+const rumusRouter = require("./routes/rumus");
 const midleware = require("./helpers/midleware");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -44,9 +45,10 @@ app.use(flash());
 
 // app.use("/users", midleware, usersRouter);
 app.use("/login", loginRouter);
-app.use("/calon", midleware, calonRouter);
+app.use("/calon", calonRouter);
 app.use("/dashboard", midleware, dashboardRouter);
 app.use("/penilaian", midleware, penilaianRouter);
+app.use("/rumus", rumusRouter);
 
 // catch 404 and forward to error handler
 // app.use((req, res, next) => next(createError(404)));

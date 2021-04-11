@@ -1,0 +1,121 @@
+<div id="recipients" class="p-8 rounded shadow bg-white border border-gray-800 rounded-xl p-8">
+    <div class="flex justify-start">
+        <div class="flex-1">
+            <p>Kondisi Baik</p>
+            <div class="mb-10">
+                $$a=3 \:\:\:\: b=6 \:\:\:\: c=10 \:\:\:\: x=n$$
+            </div>
+            $$ a \geq x \geq c = 0 $$
+            $$ a \leq x \leq b = {x - a \over b - a} $$
+            $$ b \leq x \leq c = {c - x \over c - b} $$
+        </div>
+        <div class="flex-1">
+            <p>Kondisi Sedang</p>
+            <div class="mb-10">
+                $$a=3 \:\:\:\: b=6 \:\:\:\: x=n$$
+            </div>
+            $$ x \geq a = 0 $$
+            $$ a \leq x \leq b = {x - a \over b - a} $$
+            $$ x \geq b = 1 $$
+        </div>
+        <div class="flex-1">
+            <p>Kondisi Kurang</p>
+            <div class="mb-10">
+                $$a=3 \:\:\:\: b=6 \:\:\:\: x=n$$
+            </div>
+            $$ x \leq a \geq c = 1 $$
+            $$ a \leq x \leq b = {b - x \over b - a} $$
+            $$ x \geq b = 0 $$
+        </div>
+    </div>
+    <div class="text-3xl">Fungsi Keanggotaan</div>
+    <div class="grid grid-flow-col grid-cols-3 grid-rows-3 gap-3">
+        <div>
+           <div>Pendidikan</div>
+           <span>Baik $$<%=tampilRumus.datas.pendidikan.baik.string%> = <%=tampilRumus.datas.pendidikan.baik.data%>$$</span>
+           <span>Sedang $$<%=tampilRumus.datas.pendidikan.sedang.string%> = <%=tampilRumus.datas.pendidikan.sedang.data%>$$</span>
+           <span>Kurang $$<%=tampilRumus.datas.pendidikan.kurang.string%> = <%=tampilRumus.datas.pendidikan.kurang.data%>$$</span>
+        </div>
+        <div>
+            <span>IPK $$<%=tampilRumus.datas.ipk.string%> = <%=tampilRumus.datas.ipk.data%>$$</span>
+        </div>
+        <div>
+            <div>Mengajar</div>
+            <span>Baik $$<%=tampilRumus.datas.mengajar.baik.string%> = <%=tampilRumus.datas.mengajar.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.mengajar.sedang.string%> = <%=tampilRumus.datas.mengajar.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.mengajar.kurang.string%> = <%=tampilRumus.datas.mengajar.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Karya Ilmiah</div>
+            <span>Baik $$<%=tampilRumus.datas.karyaIlmiah.baik.string%> = <%=tampilRumus.datas.karyaIlmiah.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.karyaIlmiah.sedang.string%> = <%=tampilRumus.datas.karyaIlmiah.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.karyaIlmiah.kurang.string%> = <%=tampilRumus.datas.karyaIlmiah.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Keahlian</div>
+            <span>Baik $$<%=tampilRumus.datas.keahlian.baik.string%> = <%=tampilRumus.datas.keahlian.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.keahlian.sedang.string%> = <%=tampilRumus.datas.keahlian.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.keahlian.kurang.string%> = <%=tampilRumus.datas.keahlian.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Sertifikat</div>
+            <span>Baik $$<%=tampilRumus.datas.sertifikat.baik.string%> = <%=tampilRumus.datas.sertifikat.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.sertifikat.sedang.string%> = <%=tampilRumus.datas.sertifikat.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.sertifikat.kurang.string%> = <%=tampilRumus.datas.sertifikat.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Psikologi</div>
+            <span>Baik $$<%=tampilRumus.datas.psikologi.baik.string%> = <%=tampilRumus.datas.psikologi.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.psikologi.sedang.string%> = <%=tampilRumus.datas.psikologi.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.psikologi.kurang.string%> = <%=tampilRumus.datas.psikologi.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Kompetensi</div>
+            <span>Baik $$<%=tampilRumus.datas.kompetensi.baik.string%> = <%=tampilRumus.datas.kompetensi.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.kompetensi.sedang.string%> = <%=tampilRumus.datas.kompetensi.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.kompetensi.kurang.string%> = <%=tampilRumus.datas.kompetensi.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Kesehatan</div>
+            <span>Baik $$<%=tampilRumus.datas.kesehatan.baik.string%> = <%=tampilRumus.datas.kesehatan.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.kesehatan.sedang.string%> = <%=tampilRumus.datas.kesehatan.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.kesehatan.kurang.string%> = <%=tampilRumus.datas.kesehatan.kurang.data%>$$</span>
+        </div>
+        <div>
+            <div>Berinteraksi</div>
+            <span>Baik $$<%=tampilRumus.datas.berinteraksi.baik.string%> = <%=tampilRumus.datas.berinteraksi.baik.data%>$$</span>
+            <span>Sedang $$<%=tampilRumus.datas.berinteraksi.sedang.string%> = <%=tampilRumus.datas.berinteraksi.sedang.data%>$$</span>
+            <span>Kurang $$<%=tampilRumus.datas.berinteraksi.kurang.string%> = <%=tampilRumus.datas.berinteraksi.kurang.data%>$$</span>
+        </div>
+    </div>
+    <div class="text-3xl">Proses Implikasi Fuzzy</div>
+    <div class="flex justify-start">
+        <div class="flex-1">
+            <div>Rule 1</div>
+            <div>$$Z1 = <%=tampilRumus.r.r1%>\times 2 = <%=tampilRumus.z.z1%>$$</div>
+        </div>
+        <div class="flex-1">
+            <div>Rule 2</div>
+            <div>$$Z2 = <%=tampilRumus.r.r2%>\times 2 = <%=tampilRumus.z.z2%>$$</div>
+        </div>
+        <div class="flex-1">
+            <div>Rule 3</div>
+            <div>$$Z3 = <%=tampilRumus.r.r3%>\times 2 \times 2.1 = <%=tampilRumus.z.z3%>$$</div>
+        </div>
+        <div class="flex-1">
+            <div>Rule 4</div>
+            <div>$$Z4 = <%=tampilRumus.r.r4%>\times 2 \times 4 = <%=tampilRumus.z.z4%>$$</div>
+        </div>
+        <div class="flex-1">
+            <div>Rule 5</div>
+            <div>$$Z5 = <%=tampilRumus.r.r5%>\times 2 \times 6 = <%=tampilRumus.z.z5%>$$</div>
+        </div>
+    </div>
+    <div class="text-3xl">Defuzzifikasi</div>
+    <div class="text-2xl"><%=tampilRumus.string%></div>
+    <div class="text-2xl">Rank : <%=tampilRumus.rank%></div>
+
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</div>

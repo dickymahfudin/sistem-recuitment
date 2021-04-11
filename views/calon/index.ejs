@@ -24,7 +24,7 @@
         <th data-priority="1">Nama</th>
         <th data-priority="2">Alamat</th>
         <th data-priority="3">No Telepon</th>
-        <th data-priority="3">Edit</th>
+        <th data-priority="3">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@
         <td><%= data.alamat %></td>
         <td><%= data.noHp %></td>
         <td>
-          <button
+          <a
             id="<%= data.id%>"
             nama="<%= data.nama %>"
             alamat="<%= data.alamat %>"
@@ -44,9 +44,7 @@
             title="Edit <%= data.nama %>"
           >
             <i class="fas fa-edit text-blue-700 font-bold py-2 px-2 rounded mb-2"></i>
-          </button> |
-          <a href="/calon/delete/<%= data.id%>" onclick="return confirm('Anda yakin ingin menghapus item ini?');"
-            title="Delete <%= data.nama %>" ><i class="fas fa-trash text-danger"></i></a>
+          </a> | <a href="/rumus/<%= data.id%>" title="Detail <%= data.nama %>"><i class="fas fa-calculator text-purple-800"></i></a> | <a href="/calon/delete/<%= data.id%>" onclick="return confirm('Anda yakin ingin menghapus item ini?');" title="Delete <%= data.nama %>" ><i class="fas fa-trash text-danger"></i></a>
         </td>
       </tr>
       <%}%>
