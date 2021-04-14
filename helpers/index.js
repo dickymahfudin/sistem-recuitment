@@ -18,7 +18,7 @@ const ipks = (x) => {
   }
   if (3 <= x && x <= 4) {
     const string = `3 \\leq ${x} \\leq 4 = {4 - ${x} \\over 4 - 3}`;
-    const data = (4 - x) / (4 - 3);
+    const data = +((4 - x) / (4 - 3)).toFixed(2);
     return { string, data };
   }
 };
