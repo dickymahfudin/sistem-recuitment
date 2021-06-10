@@ -45,10 +45,10 @@ app.use(flash());
 
 // app.use("/users", midleware, usersRouter);
 app.use("/login", loginRouter);
-app.use("/calon", calonRouter);
-app.use("/dashboard", dashboardRouter);
-app.use("/penilaian", penilaianRouter);
-app.use("/rumus", rumusRouter);
+app.use("/calon", midleware, calonRouter);
+app.use("/dashboard", midleware, dashboardRouter);
+app.use("/penilaian", midleware, penilaianRouter);
+app.use("/rumus", midleware, rumusRouter);
 
 // catch 404 and forward to error handler
 // app.use((req, res, next) => next(createError(404)));
