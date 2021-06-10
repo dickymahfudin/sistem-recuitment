@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class calon extends Model {
     /**
@@ -12,27 +10,30 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  calon.init({
-    nama: DataTypes.STRING,
-    alamat: DataTypes.STRING,
-    noHp: DataTypes.STRING,
-    pendidikan: DataTypes.STRING,
-    ipk: DataTypes.FLOAT,
-    mengajar: DataTypes.FLOAT,
-    karyaIlmiah: DataTypes.FLOAT,
-    keahlian: DataTypes.FLOAT,
-    sertifikat: DataTypes.FLOAT,
-    psikologi: DataTypes.FLOAT,
-    kompetensi: DataTypes.FLOAT,
-    kesehatan: DataTypes.FLOAT,
-    berinteraksi: DataTypes.FLOAT,
-    nilai: DataTypes.FLOAT,
-    rank: DataTypes.STRING,
-    status: DataTypes.BOOLEAN
-  }, {
-    sequelize,
-    modelName: 'calon',
-  });
+  }
+  calon.init(
+    {
+      nama: DataTypes.STRING,
+      alamat: DataTypes.STRING,
+      noHp: DataTypes.STRING,
+      pendidikan: DataTypes.STRING,
+      ipk: DataTypes.FLOAT,
+      mengajar: DataTypes.FLOAT,
+      karyaIlmiah: DataTypes.FLOAT,
+      materi: DataTypes.FLOAT,
+      sertifikat: DataTypes.FLOAT,
+      toefl: DataTypes.FLOAT,
+      kompetensi: DataTypes.FLOAT,
+      kesehatan: DataTypes.FLOAT,
+      berinteraksi: DataTypes.FLOAT,
+      nilai: DataTypes.FLOAT,
+      rank: DataTypes.STRING,
+      status: DataTypes.BOOLEAN,
+    },
+    {
+      sequelize,
+      modelName: "calon",
+    }
+  );
   return calon;
 };

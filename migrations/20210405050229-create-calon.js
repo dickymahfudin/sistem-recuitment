@@ -29,13 +29,13 @@ module.exports = {
       karyaIlmiah: {
         type: Sequelize.FLOAT,
       },
-      keahlian: {
+      materi: {
         type: Sequelize.FLOAT,
       },
       sertifikat: {
         type: Sequelize.FLOAT,
       },
-      psikologi: {
+      toefl: {
         type: Sequelize.FLOAT,
       },
       kompetensi: {

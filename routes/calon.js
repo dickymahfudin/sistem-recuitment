@@ -20,7 +20,6 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   const { nama, alamat, noHp } = req.body;
-  console.log(nama);
   await calon
     .create({ nama, alamat, noHp })
     .then((result) => {
@@ -34,7 +33,6 @@ router.post("/", async (req, res, next) => {
 });
 
 router.post("/:id", async (req, res, next) => {
-  console.log("MASUK SINI");
   const { id } = req.params;
   const {
     nama,
@@ -44,9 +42,9 @@ router.post("/:id", async (req, res, next) => {
     ipk,
     mengajar,
     karyaIlmiah,
-    keahlian,
+    materi,
     sertifikat,
-    psikologi,
+    toefl,
     kompetensi,
     kesehatan,
     berinteraksi,
@@ -62,9 +60,9 @@ router.post("/:id", async (req, res, next) => {
     ipk,
     mengajar,
     karyaIlmiah,
-    keahlian,
+    materi,
     sertifikat,
-    psikologi,
+    toefl,
     kompetensi,
     kesehatan,
     berinteraksi,

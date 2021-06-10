@@ -85,23 +85,34 @@ const anggotaPrint = (x) => {
 
 //implikasi fuzzy
 const impikasiFuzzy = (data) => {
+  console.log(data);
   const pendidikans = data.pendidikan == "S2" ? 6 : 8;
   const pendidikan = anggotaPrint(pendidikans);
-  const mengajar = anggotaPrint(data.mengajar);
-  const karyaIlmiah = anggotaPrint(data.karyaIlmiah);
+  const mengajar = anggotaPrint(
+    data.mengajar === 1 ? 5 : data.mengajar === 2 ? 7 : 9
+  );
+  const karyaIlmiah = anggotaPrint(
+    data.karyaIlmiah === 1 ? 2 : data.karyaIlmiah === 2 ? 6 : 9
+  );
   const ipk = ipks(data.ipk);
-  const keahlian = anggotaPrint(data.keahlian);
-  const sertifikat = anggotaPrint(data.sertifikat);
-  const psikologi = anggotaPrint(data.psikologi);
+  const materi = anggotaPrint(
+    data.materi === 1 ? 5 : data.materi === 2 ? 7 : 9
+  );
+  const sertifikat = anggotaPrint(data.sertifikat === 1 ? 5 : 8);
+  const toefl = anggotaPrint(data.toefl === 1 ? 5 : data.toefl === 2 ? 7 : 9);
   const kompetensi = anggotaPrint(data.kompetensi);
-  const kesehatan = anggotaPrint(data.kesehatan);
-  const berinteraksi = anggotaPrint(data.berinteraksi);
+  const kesehatan = anggotaPrint(
+    data.kesehatan === 1 ? 5 : data.kesehatan === 2 ? 7 : 9
+  );
+  const berinteraksi = anggotaPrint(
+    data.berinteraksi === 1 ? 5 : data.berinteraksi === 2 ? 7 : 9
+  );
 
   const r1 = Math.min(
     ...[
       pendidikan.baik.data,
       karyaIlmiah.baik.data,
-      keahlian.baik.data,
+      materi.baik.data,
       ipk.data,
       berinteraksi.baik.data,
       mengajar.baik.data,
@@ -109,10 +120,10 @@ const impikasiFuzzy = (data) => {
   );
 
   const r2 = Math.min(
-    ...[pendidikan.sedang.data, psikologi.baik.data, mengajar.baik.data]
+    ...[pendidikan.sedang.data, toefl.baik.data, mengajar.baik.data]
   );
   const r3 = Math.min(
-    ...[kesehatan.sedang.data, psikologi.kurang.data, kompetensi.baik.data]
+    ...[kesehatan.sedang.data, toefl.kurang.data, kompetensi.baik.data]
   );
   const r4 = Math.min(...[berinteraksi.kurang.data, sertifikat.sedang.data]);
   const r5 = Math.min(
@@ -150,13 +161,14 @@ const impikasiFuzzy = (data) => {
     mengajar,
     karyaIlmiah,
     ipk,
-    keahlian,
+    materi,
     sertifikat,
-    psikologi,
+    toefl,
     kompetensi,
     kesehatan,
     berinteraksi,
   };
+  console.log(defuzifikasi);
   return { datas, r, z, string, defuzifikasi: defuzifikasi.toFixed(2), rank };
 };
 
