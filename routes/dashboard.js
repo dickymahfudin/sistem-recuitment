@@ -43,7 +43,12 @@ router.get("/", async (req, res, next) => {
         : "Baik";
   });
   const calonFalse = tempCaloncalons.map((e) => e.status == false).length;
-  const calons = tempCaloncalons.map((e) => e.status == true);
+
+  const calons = await calon.findAll({
+    where: { status: true },
+    order: [["nilai", "ASC"]],
+  });
+  console.log(calons);
   const rankA = tempCaloncalons.filter((e) => e.rank == "A").length;
   const rankB = tempCaloncalons.filter((e) => e.rank == "B").length;
   const rankC = tempCaloncalons.filter((e) => e.rank == "C").length;
