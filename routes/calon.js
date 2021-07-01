@@ -37,7 +37,7 @@ router.post("/:id", async (req, res, next) => {
   const {
     nama,
     alamat,
-    nohp,
+    noHp,
     pendidikan,
     ipk,
     mengajar,
@@ -55,7 +55,7 @@ router.post("/:id", async (req, res, next) => {
   const data = {
     nama,
     alamat,
-    nohp,
+    noHp,
     pendidikan,
     ipk,
     mengajar,
