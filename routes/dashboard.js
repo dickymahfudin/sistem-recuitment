@@ -3,8 +3,8 @@ const router = express.Router();
 const { calon } = require("../models");
 
 router.get("/", async (req, res, next) => {
-  const calons = await calon.findAll({ order: [["nilai", "ASC"]] });
-  calons.map((e) => {
+  const tempCaloncalons = await calon.findAll({ order: [["nilai", "ASC"]] });
+  tempCaloncalons.map((e) => {
     e.status = e.status ? "Sudah Dinilai" : "Belum Dinilai";
     e.mengajar =
       e.mengajar === 1
@@ -42,11 +42,12 @@ router.get("/", async (req, res, next) => {
         ? "Cukup"
         : "Baik";
   });
-  const calonFalse = calons.filter((e) => e.status == false).length;
-  const rankA = calons.filter((e) => e.rank == "A").length;
-  const rankB = calons.filter((e) => e.rank == "B").length;
-  const rankC = calons.filter((e) => e.rank == "C").length;
-  const rankD = calons.filter((e) => e.rank == "D").length;
+  const calonFalse = tempCaloncalons.map((e) => e.status == false).length;
+  const calons = tempCaloncalons.map((e) => e.status == true);
+  const rankA = tempCaloncalons.filter((e) => e.rank == "A").length;
+  const rankB = tempCaloncalons.filter((e) => e.rank == "B").length;
+  const rankC = tempCaloncalons.filter((e) => e.rank == "C").length;
+  const rankD = tempCaloncalons.filter((e) => e.rank == "D").length;
 
   res.render("dashboard", {
     title: "Dashboard",
