@@ -42,13 +42,16 @@ router.get("/", async (req, res, next) => {
         ? "Cukup"
         : "Baik";
   });
-  const calonFalse = tempCaloncalons.map((e) => e.status == false).length;
 
   const calons = await calon.findAll({
     where: { status: true },
     order: [["nilai", "ASC"]],
   });
-  console.log(calons);
+  const calonFalse = await calon.findAll({
+    where: { status: false },
+    order: [["nilai", "ASC"]],
+  });
+  console.log(calonFalse.length);
   const rankA = tempCaloncalons.filter((e) => e.rank == "A").length;
   const rankB = tempCaloncalons.filter((e) => e.rank == "B").length;
   const rankC = tempCaloncalons.filter((e) => e.rank == "C").length;
@@ -57,7 +60,7 @@ router.get("/", async (req, res, next) => {
   res.render("dashboard", {
     title: "Dashboard",
     calons,
-    calonFalse,
+    calonFalse: calonFalse.length,
     rankA,
     rankB,
     rankC,
