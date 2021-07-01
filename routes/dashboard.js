@@ -4,6 +4,8 @@ const { calon } = require("../models");
 
 router.get("/", async (req, res, next) => {
   const tempCaloncalons = await calon.findAll({ order: [["nilai", "ASC"]] });
+  const total = tempCaloncalons.length;
+  console.log(total);
   tempCaloncalons.map((e) => {
     e.status = e.status ? "Sudah Dinilai" : "Belum Dinilai";
     e.mengajar =
@@ -51,7 +53,6 @@ router.get("/", async (req, res, next) => {
     where: { status: false },
     order: [["nilai", "ASC"]],
   });
-  console.log(calonFalse.length);
   const rankA = tempCaloncalons.filter((e) => e.rank == "A").length;
   const rankB = tempCaloncalons.filter((e) => e.rank == "B").length;
   const rankC = tempCaloncalons.filter((e) => e.rank == "C").length;
@@ -60,6 +61,7 @@ router.get("/", async (req, res, next) => {
   res.render("dashboard", {
     title: "Dashboard",
     calons,
+    total,
     calonFalse: calonFalse.length,
     rankA,
     rankB,
